@@ -1,3 +1,7 @@
+/**
+ * @OnlyCurrentDoc
+ */
+
 function generatePaystub() {
   var SETTING_SHEET_NAME = 'Payroll settings and hourly tracking';
   var spreadsheet = SpreadsheetApp.getActiveSpreadsheet();
@@ -203,7 +207,7 @@ function generatePaystub() {
     paystubSheet.getRange('E24').setValue('PSST accrued since last notice (hours):');
     paystubSheet.getRange('H24').setValue(normalHoursWorked / 40);
     paystubSheet.getRange('E25').setValue('PSST reduced (hours):');
-    paystubSheet.getRange('H25').setValue(paidSickTime / 40);
+    paystubSheet.getRange('H25').setValue(paidSickTime);
     paystubSheet.getRange('E26').setValue('PSST used this year (hours):');  
     paystubSheet.getRange('H26').setValue(sumPaidSickTime);
   }
